@@ -1,0 +1,14 @@
+.Button {
+  background-color: #674a8c;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+/* .Button_start {
+  background-color: rgb(100, 201, 100);
+  color: white;
+} */

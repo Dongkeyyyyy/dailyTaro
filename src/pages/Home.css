@@ -1,0 +1,19 @@
+.mainTitle {
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 24px; /* 글자 크기 */
+  color: #333; /* 글자 색상 */
+  margin-top: 20px; /* 위쪽 여백 */
+}
+
+.button_section {
+  min-width: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.img_section {
+  display: flex; /* 플렉스 컨테이너 설정 */
+  justify-content: center; /* 가로축 가운데 정렬 */
+  align-items: center; /* 세로축 가운데 정렬 (선택 사항) */
+  height: 100%; /* 부모 높이를 설정해야 align-items가 적용됨 */
+}
