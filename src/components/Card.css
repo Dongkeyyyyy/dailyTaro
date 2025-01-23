@@ -4,8 +4,8 @@
 }
 
 .card {
-  width: 150px;
-  height: 200px;
+  width: 90px;
+  height: 120px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
