@@ -8,7 +8,12 @@
   white-space: nowrap;
 }
 
-/* .Button_start {
-  background-color: rgb(100, 201, 100);
+.Button_START {
+  background-color: #674a8c;
   color: white;
-} */
+}
+
+.Button_SHUFFLE {
+  background-color: #674a8c;
+  color: white;
+}

@@ -1,15 +1,9 @@
 import "./Button.css";
-import { useNavigate } from "react-router-dom";
 
-const Button = () => {
-  const nav = useNavigate();
-
-  const onClickButton = () => {
-    nav("/tarot");
-  };
+const Button = ({ text, type, onClick }) => {
   return (
-    <button onClick={onClickButton} className="Button">
-      카드뽑기
+    <button onClick={onClick} className={`Button Button_${type}`}>
+      {text}
     </button>
   );
 };
