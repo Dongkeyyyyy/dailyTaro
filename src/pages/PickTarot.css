@@ -21,3 +21,15 @@ Card 컴포넌트는 단순히 카드의 모양(크기, 텍스트 스타일 등)
   justify-content: center;
   padding: 20px;
 }
+
+.cardsWrapper img {
+  width: 150px; /* 카드 크기 */
+  height: auto; /* 비율 유지 */
+  object-fit: contain; /* 이미지 비율 유지 */
+  display: block; /* 중앙 정렬 */
+  margin: 0 auto;
+}
+
+.button_section {
+  margin-top: 20px;
+}
