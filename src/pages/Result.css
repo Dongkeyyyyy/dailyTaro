@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "dongle";
+  src: url("/public/Dongle-Regular.ttf");
+}
+
+.loading_section p {
+  font-family: dongle;
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+}
+
+.loading_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
