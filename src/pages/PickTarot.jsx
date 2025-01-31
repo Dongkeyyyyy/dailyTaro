@@ -2,7 +2,7 @@ import Card from "../components/Card";
 import tarotCardBack from "../assets/tarotCardBack.jpg";
 import "./PickTarot.css";
 import Button from "../components/Button";
-import tarotMock from "../data/tarotMock"; // 가상mock 데이
+import tarotMock from "../data/tarotMock"; // 가상mock 데이터
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ const PickTarot = () => {
   const navigate = useNavigate();
 
   const [selectedCard, setSelectedCard] = useState(null); // 선택한 카드 저장
+
   const cards = Array(3)
     .fill(null)
     .map((_, index) => ({
