@@ -1,19 +1,63 @@
 .Button {
-  background-color: #674a8c;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  background: linear-gradient(
+    135deg,
+    #5d3fd3,
+    #302b63
+  ); /* 보라색 계열 그라디언트 */
+  color: #fee715; /* 황금빛 텍스트 */
   font-size: 18px;
-  white-space: nowrap;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: 2px solid #ffd700; /* 황금색 테두리 */
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(162, 57, 234, 0.5); /* 퍼플빛 그림자 */
+  text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8); /* 황금빛 텍스트 효과 */
+  letter-spacing: 1px;
+  font-family: "EF_YOONY";
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ 버튼 호버 시 마법처럼 빛나는 효과 */
+.Button:hover {
+  background: linear-gradient(135deg, #6a0572, #3a0ca3);
+  box-shadow: 0px 8px 25px rgba(255, 215, 0, 0.9); /* 황금빛으로 빛나는 효과 */
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ✨ 버튼 클릭 시 움푹 들어가는 효과 */
+.Button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 3px 10px rgba(255, 215, 0, 0.6);
 }
 
 .Button_START {
-  background-color: #674a8c;
+  background-color: #ffd700;
   color: white;
 }
 
 .Button_SHUFFLE {
   background-color: #674a8c;
   color: white;
+}
+
+.Button_RETRY {
+  background-color: #674a8c;
+  margin-top: 30px;
+  color: white;
+}
+
+.Button_SHARELINK {
+  color: white;
+}
+
+@font-face {
+  font-family: "EF_YOONY";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_YOONY.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }

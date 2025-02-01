@@ -1,4 +1,5 @@
 import "./ResultDetail.css";
+import Button from "../components/Button";
 
 const ResultDetail = ({ cardData }) => {
   return (
@@ -17,6 +18,30 @@ const ResultDetail = ({ cardData }) => {
 
             <section className="cardImage_section">
               {" "}
+              <div
+                className="twinkle"
+                style={{ top: "10%", left: "20%" }}
+              ></div>
+              <div
+                className="twinkle"
+                style={{ top: "35%", left: "15%" }}
+              ></div>
+              <div
+                className="twinkle"
+                style={{ top: "30%", left: "75%" }}
+              ></div>
+              <div
+                className="twinkle"
+                style={{ top: "50%", left: "90%" }}
+              ></div>
+              <div
+                className="twinkle"
+                style={{ top: "65%", left: "30%" }}
+              ></div>
+              <div
+                className="twinkle"
+                style={{ top: "87%", left: "40%" }}
+              ></div>
               <img src={cardData.image} alt={cardData.name} />
             </section>
 

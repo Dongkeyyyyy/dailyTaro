@@ -4,15 +4,24 @@ import loadingGif from "../assets/loading.gif"; //로딩이미지 추가
 import { useState, useEffect } from "react";
 import tarotMock from "../data/tarotMock"; // 가상mock 데이터
 import ResultDetail from "../components/ResultDetail";
+import Button from "../components/Button";
 
 const Result = () => {
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 관리
+
   const location = useLocation();
+
   const selectedCard = location.state?.selectedCard;
   console.log("선택된 카드", selectedCard);
   // location.state가 존재하면 selectedCatd에 접근
   // location.state가 undefined이면 그냥 undefined 반환 (에러 방지)
+  const nav = useNavigate();
+
+  const onClickToHome = () => {
+    nav("/");
+  };
   const cardData = tarotMock.find((card) => card.id === selectedCard?.id);
+
   console.log("카드데이터", cardData);
   // tarotMock에서 선택한 카드 정보 찾기
 
@@ -33,7 +42,22 @@ const Result = () => {
           <p>카드 해석하는 중... 잠시만 기다려 주세요</p>
         </section>
       ) : (
-        <ResultDetail cardData={cardData} />
+        <>
+          <ResultDetail cardData={cardData} />
+          <section className="button_section">
+            {" "}
+            <Button
+              onClick={onClickToHome}
+              text={"카드 다시뽑기"}
+              type={"RETRY"}
+            />
+            <Button
+              text={"카카오톡으로 친구에게 공유하기"}
+              type={"SHAREBYKAKAOTALK"}
+            />
+            <Button text={"링크 공유하기"} type={"SHARELINK"} />
+          </section>
+        </>
       )}
     </div>
   );

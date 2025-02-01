@@ -17,3 +17,10 @@
   justify-content: center;
   height: 100vh;
 }
+
+.button_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px; /* 버튼 간격 */
+}

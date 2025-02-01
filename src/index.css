@@ -15,12 +15,8 @@ html,
 body {
   margin: 0px;
   width: 100%;
-  background: rgb(141, 110, 240);
-  background: radial-gradient(
-    circle,
-    rgba(141, 110, 240, 1) 19%,
-    rgba(112, 85, 200, 1) 82%
-  );
+  background: linear-gradient(135deg, #1b1b2f 10%, #302b63 50%, #5d3fd3 90%);
+
   height: 100%;
   display: flex;
 }
@@ -40,5 +36,5 @@ body * {
 
 h1 {
   font-family: "Paperlogy-8ExtraBold";
-  color: aliceblue;
+  color: #ffd1dc;
 }
