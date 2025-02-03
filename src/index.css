@@ -11,13 +11,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Danjo-bold-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   margin: 0px;
   width: 100%;
   background: linear-gradient(135deg, #1b1b2f 10%, #302b63 50%, #5d3fd3 90%);
 
-  height: 100%;
+  height: auto;
   display: flex;
 }
 
@@ -35,6 +43,6 @@ body * {
 }
 
 h1 {
-  font-family: "Paperlogy-8ExtraBold";
+  font-family: "Danjo-bold-Regular";
   color: #ffd1dc;
 }

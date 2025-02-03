@@ -1,8 +1,6 @@
-import Card from "../components/Card";
 import tarotCardBack from "../assets/tarotCardBack.jpg";
 import "./PickTarot.css";
 import Button from "../components/Button";
-import tarotMock from "../data/tarotMock"; // 가상mock 데이터
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -21,9 +19,6 @@ const PickTarot = () => {
       name: `Card ${index + 1}`, // 카드 이름
       image: "./assets/tarotCardBack.jpg", // 카드 뒷면 이미지 경로
     }));
-
-  console.log(cards);
-  console.log("목데이터 가져와", tarotMock);
 
   // 애니메이션 상태 정의 (Framer Motion Variants)
   const cardVariants = {

@@ -58,7 +58,7 @@
     rgba(255, 255, 255, 0) 80%
   );
   border-radius: 50%;
-  animation: twinkle 1.5s infinite alternate ease-in-out;
+  animation: twinkle 2.5s infinite alternate ease-in-out;
 }
 
 .tarotReading_section {
@@ -100,8 +100,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Danjo-bold-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .cardName_section h3 {
   font-family: Hardworking_donghee;
   font-size: 30px;
   color: #b08fd6;
+}
+
+.tarotReading_section p {
+  font-family: "Danjo-bold-Regular";
 }

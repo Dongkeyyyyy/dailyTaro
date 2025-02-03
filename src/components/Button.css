@@ -8,7 +8,7 @@
   font-size: 18px;
   font-weight: bold;
   padding: 12px 24px;
-  border: 2px solid #ffd700; /* 황금색 테두리 */
+  border: 1px solid #ffd700; /* 황금색 테두리 */
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
