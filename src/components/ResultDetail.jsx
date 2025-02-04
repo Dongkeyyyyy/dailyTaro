@@ -2,6 +2,8 @@ import "./ResultDetail.css";
 import Button from "../components/Button";
 
 const ResultDetail = ({ cardData }) => {
+  console.log("카드 디테일 컴포넌트", cardData);
+  console.log("카드명", cardData.card.name_short);
   return (
     <>
       {/* ✅ React Fragment로 감싸줌 */}
@@ -13,7 +15,7 @@ const ResultDetail = ({ cardData }) => {
           <>
             <section className="cardName_section">
               {" "}
-              <h3>{cardData.name}</h3>
+              <h3>{cardData.card.name}</h3>
             </section>
 
             <section className="cardImage_section">
@@ -42,19 +44,22 @@ const ResultDetail = ({ cardData }) => {
                 className="twinkle"
                 style={{ top: "87%", left: "40%" }}
               ></div>
-              <img src={cardData.image} alt={cardData.name} />
+              <img
+                src={`/cardImages/${cardData.card.name_short}.jpg`.trim()} // .trim()을 추가하여 공백 제거
+                alt={cardData.card.name}
+              />
             </section>
 
             <section className="tarotReading_section">
               {" "}
               <p>
-                <strong>긍정적인 의미🥰: </strong> {cardData.meaning.positive}
+                <strong>정방향: </strong> {cardData.card.meaning_up}
               </p>
               <p>
-                <strong>부정적인 의미👻: </strong> {cardData.meaning.negative}
+                <strong>해석: </strong> {cardData.card.desc}
               </p>
               <p>
-                <strong>조언🤓: </strong> {cardData.meaning.advice}
+                <strong>역방향:</strong> {cardData.card.meaning_rev}
               </p>
             </section>
           </>

@@ -7,16 +7,20 @@ import { useNavigate } from "react-router-dom";
 
 const PickTarot = () => {
   const [shuffledCards, setShuffledCards] = useState([]); // 섞이면 컴포넌트를 다시 렌더링함 -> 카드들이 진짜 섞였는지, 그 섞인 카드 배열을 관리
+
+  const [isAPILoading, setIsAPILoading] = useState(true); // API 로딩 상태 관리
+
   const [isShuffled, setIsShuffled] = useState(false); // 카드 섞였는지 여부만 !!! 추적한다.
+
   const navigate = useNavigate();
 
   const [selectedCard, setSelectedCard] = useState(null); // 선택한 카드 저장
 
-  const cards = Array(3)
+  const cards = Array(22)
     .fill(null)
     .map((_, index) => ({
       id: index + 1, // 고유 ID (1부터 시작)
-      name: `Card ${index + 1}`, // 카드 이름
+      name: `ar ${index + 1}`, // 카드 이름
       image: "./assets/tarotCardBack.jpg", // 카드 뒷면 이미지 경로
     }));
 
@@ -53,20 +57,33 @@ const PickTarot = () => {
     // 카드 셔플 랜덤 함수 호출
     shuffleCards(cards); // cards 배열을 넘겨서 shuffle
   };
-  // 카드 클릭 시 결과 페이지로 이동
-  const onClickPickCard = (card) => {
+
+  const fetchCardData = async (cardId) => {
+    console.log("카드아이디", cardId);
+    const cardCode = `ar${cardId.toString().padStart(2, "0")}`;
+    const apiUrl = `https://tarotapi.dev/api/v1/cards/${cardCode}`;
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    console.log("fetchedData", data);
+    return data;
+  };
+
+  // 카드 섞기 및 선택 후 API로 카드 데이터 가져오기
+  const onClickPickCard = async (card) => {
     if (isShuffled) {
       setSelectedCard(card); // 선택한 카드 상태 업데이트
+      const cardData = await fetchCardData(card.id); // API 데이터 받아오기
+      console.log("카드 뽑는 페이지에서 보내는 데이터", cardData);
       navigate("/Result", {
         state: {
-          selectedCard: card,
+          selectedCard: card, // 카드 제목이나 이미지
+          cardData: cardData, // API로 받은 카드 데이터를 결과 페이지로 넘기기
         },
-      }); // 결과 페이지로 이동하면서 카드 정보 전달
-      console.log(`선택한 카드 ID: ${card.id}`);
-      // 카드 결과 페이지로 이동 로직 추가
-      // history.push(`/result/${card.id}`);
+      });
     }
   };
+
   // 섞였을 때먼 버튼 클릭 가능하도록 섞임 여부 추적
   useEffect(() => {
     if (isShuffled) {

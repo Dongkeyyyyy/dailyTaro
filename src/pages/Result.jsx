@@ -2,51 +2,26 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./Result.css";
 import loadingGif from "../assets/loading.gif"; //로딩이미지 추가
 import { useState, useEffect } from "react";
-import tarotMock from "../data/tarotMock"; // 가상mock 데이터
 import ResultDetail from "../components/ResultDetail";
 import Button from "../components/Button";
+import { select } from "framer-motion/client";
 
 const Result = () => {
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 관리
 
-  const [isAPILoading, setIsAPILoading] = useState(true); // 로딩 상태 관리
+  const location = useLocation(); // useLocation 훅을 먼저 호출하여 location 객체를 가져옴
+  const selectedCard = location.state?.selectedCard; //사용자가 선택한 정보
+  const cardData = location.state?.cardData; // 카드 뽑기 페이지에서 넘겨받은 카드 데이터
 
-  const location = useLocation();
-
-  const selectedCard = location.state?.selectedCard;
+  console.log("결과 페이지 location", location.state);
+  console.log("데이터 잘 가져왔는지 확인", cardData);
   console.log("선택된 카드", selectedCard);
-  // location.state가 존재하면 selectedCatd에 접근
-  // location.state가 undefined이면 그냥 undefined 반환 (에러 방지)
-  const nav = useNavigate();
 
-  const [cards, setCards] = useState([]); // API 데이터를 저장할 상태 추가
+  const nav = useNavigate();
 
   const onClickToHome = () => {
     nav("/");
   };
-  const cardData = tarotMock.find((card) => card.id === selectedCard?.id);
-  console.log(cardData);
-  // ✅ API에서 카드 데이터 가져오기
-  useEffect(() => {
-    const fetchCardData = async (selectedCard) => {
-      // async 비동기 함수 정의 사용. 이 함수 안에서 await을 사용할 수 있음
-      const cardId = selectedCard.id;
-      const cardCode = `ar${cardId.toString().padStart(2, "0")}`; // 카드 ID가 1일 때 "ar01"로 포맷 맞추기
-      const apiUrl = `https://tarotapi.dev/api/v1/cards/${cardCode}`;
-      try {
-        const response = await fetch(apiUrl); // 비동기 처리할 때 fetch 요청이 끝날 때까지 기다림. 응답이 올 때까지 다음 코드가 싫행 x
-        const data = await response.json();
-        console.log(data); // 카드 데이터 출력
-        setCards(data); // 가져온 카드 데이터 저장
-        setIsAPILoading(false);
-      } catch (error) {
-        console.error("카드 데이터를 가져오는 중 오류 발생:", error);
-        setIsAPILoading(false);
-      }
-    };
-
-    fetchCardData();
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
