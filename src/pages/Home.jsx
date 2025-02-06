@@ -14,11 +14,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="mainTitle">
-        <h1>
-          오늘의 운세:
-          <br />
-          이것 뭐예요?
-        </h1>
+        <h1>오늘 나의 운명은?</h1>
       </div>
       <section className="img_section">
         <img className="main_img" src={mainImg} alt="" />

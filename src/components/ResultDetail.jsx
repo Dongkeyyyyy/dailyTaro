@@ -1,5 +1,6 @@
 import "./ResultDetail.css";
 import Button from "../components/Button";
+import ToggleButton from "./ToggleButton";
 
 const ResultDetail = ({ cardData }) => {
   console.log("카드 디테일 컴포넌트", cardData);
@@ -8,7 +9,7 @@ const ResultDetail = ({ cardData }) => {
     <>
       {/* ✅ React Fragment로 감싸줌 */}
       <section className="header_section">
-        <h2>오늘의 운세 결과는...</h2>
+        <h2>오늘의 운세 결과는</h2>
       </section>
       <div className="selectedCardInfo">
         {cardData ? (
@@ -49,17 +50,17 @@ const ResultDetail = ({ cardData }) => {
                 alt={cardData.card.name}
               />
             </section>
+            <div className="toggle-container ">토글버튼자리</div>
 
             <section className="tarotReading_section">
-              {" "}
               <p>
                 <strong>정방향: </strong> {cardData.card.meaning_up}
               </p>
               <p>
-                <strong>해석: </strong> {cardData.card.desc}
+                <strong>역방향:</strong> {cardData.card.meaning_rev}
               </p>
               <p>
-                <strong>역방향:</strong> {cardData.card.meaning_rev}
+                <strong>해석🔮: </strong> {cardData.card.desc}
               </p>
             </section>
           </>

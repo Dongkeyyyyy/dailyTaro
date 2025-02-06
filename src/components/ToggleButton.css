@@ -1,0 +1,46 @@
+.toggle-switch {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch.on {
+  background-color: #4caf50;
+}
+
+.toggle-switch.off {
+  background-color: #999;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+.toggle-switch.on .toggle-circle {
+  transform: translateX(30px);
+}
+
+.toggle-switch.off .toggle-circle {
+  transform: translateX(0);
+}
+
+.toggle-switch span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  right: 10px;
+}

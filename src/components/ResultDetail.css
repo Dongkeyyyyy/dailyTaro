@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Hardworking_donghee";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_06@1.0/Hardworking_donghee.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Danjo-bold-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 부모 요소인 .cardImage_section을 가운데 정렬 */
 .cardImage_section {
   display: flex;
@@ -70,18 +86,19 @@
   border: 1px solid #1b1b2f;
   border-radius: 8px;
   color: white;
+  padding: 10px;
 }
 
 .header_section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 11px;
 }
 
 .header_section h2 {
-  font-family: Hardworking_donghee;
-  margin-top: 10px;
+  font-family: "Danjo-bold-Regular";
+  margin-top: 30px;
   font-size: 30px;
   color: white;
 }
@@ -90,22 +107,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-@font-face {
-  font-family: "Hardworking_donghee";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_06@1.0/Hardworking_donghee.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Danjo-bold-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .cardName_section h3 {

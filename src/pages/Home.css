@@ -1,8 +1,26 @@
 .mainTitle {
-  text-align: center; /* 텍스트 중앙 정렬 */
-  font-size: 24px; /* 글자 크기 */
-  color: #333; /* 글자 색상 */
-  margin-top: 20px; /* 위쪽 여백 */
+  font-size: 28px; /* 현재 크기에 맞게 조정 */
+  font-weight: bold;
+  letter-spacing: 0.08em; /* 글자 간격 추가 */
+  text-align: center;
+  line-height: 1.4; /* 줄 간격 조정 */
+  color: #ffdbff; /* 부드러운 보라색 톤 */
+
+  /* 글로우 효과 */
+  text-shadow: 0 0 5px #ffafcc, 0 0 10px #ffafcc, 0 0 15px #ff66a1,
+    0 0 20px #ff66a1, 0 0 25px #ff1e56;
+
+  animation: glow 1.5s infinite alternate;
+}
+
+/* 부드럽게 빛나는 애니메이션 */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ffafcc, 0 0 10px #ffafcc, 0 0 15px #ff66a1;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff66a1, 0 0 20px #ff66a1, 0 0 30px #ff1e56;
+  }
 }
 
 .button_section {
