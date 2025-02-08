@@ -118,3 +118,15 @@
 .tarotReading_section p {
   font-family: "Danjo-bold-Regular";
 }
+
+.toggle_wrapper {
+  display: flex;
+  justify-content: flex-end; /* 🔹 오른쪽 정렬 */
+  margin-right: 10px; /* 🔹 오른쪽 여백 (조정 가능) */
+}
+
+.toggle_wrapper p {
+  color: white;
+  font-size: 14px; /* 🔹 글씨 크기 조정 */
+  margin: 0; /* 🔹 기본 마진 제거 */
+}

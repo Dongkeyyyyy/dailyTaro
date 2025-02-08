@@ -50,7 +50,10 @@ const ResultDetail = ({ cardData }) => {
                 alt={cardData.card.name}
               />
             </section>
-            <div className="toggle-container ">토글버튼자리</div>
+            <div className="toggle_wrapper">
+              <p>번역</p>
+              <ToggleButton />
+            </div>
 
             <section className="tarotReading_section">
               <p>

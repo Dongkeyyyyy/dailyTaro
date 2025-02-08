@@ -1,23 +1,24 @@
 import "./ToggleButton.css";
+import { useState } from "react"; // ✅ useState를 반드시 import
 import { motion } from "framer-motion";
 
 const ToggleButton = () => {
   const [isOn, setIsOn] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true); // 🔹 비활성화 상태 추가
+
+  const toggleHandler = () => {
+    if (isDisabled) return; // 🔹 비활성화 상태면 클릭 이벤트 차단
+    setIsOn((prev) => !prev);
+    alert("번역기능은 추후 제공 예정이에요🙂");
+  };
 
   return (
-    <div
-      className={`w-16 h-8 flex items-center rounded-full p-1 cursor-pointer ${
-        isOn ? "bg-green-500" : "bg-gray-300"
-      }`}
-      onClick={() => setIsOn(!isOn)}
-    >
-      <motion.div
-        className="w-6 h-6 bg-white rounded-full shadow-md"
-        layout
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        initial={false}
-        animate={{ x: isOn ? 32 : 0 }}
-      />
+    <div className="toggle-wrapper" onClick={toggleHandler}>
+      <div className={`toggle-container ${isOn ? "toggle--checked" : ""}`}>
+        <div
+          className={`toggle-circle ${isOn ? "toggle-circle-checked" : ""}`}
+        />
+      </div>
     </div>
   );
 };
